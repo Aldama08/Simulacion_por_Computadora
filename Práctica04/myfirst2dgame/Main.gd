@@ -6,11 +6,16 @@ var score
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	$HUD.show_game_over()	
+	
 
 func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	get_tree().call_group("mobs", "queue_free")
+	$HUD.update_score(score)
+	$HUD.show_message("Get Ready")
 
 func _on_score_timer_timeout():
 	score += 1
@@ -44,9 +49,8 @@ func _on_mob_timer_timeout():
 	# Spawn the mob by adding it to the Main scene.
 	add_child(mob)
 
-func _ready():
-	new_game()
 
 
 func _on_player_hit() -> void:
 	pass # Replace with function body.
+	
