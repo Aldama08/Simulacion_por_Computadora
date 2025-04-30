@@ -1,4 +1,2 @@
-res://Hub.tscn
-res://Player.tscn
-res://Mob.tscn
-res://Main.tscn
+res://main.tscn
+res://hud.tscn

@@ -1,21 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw30f7w0iovnh"]
+[gd_scene load_steps=10 format=3 uid="uid://c5dlmbqotvytv"]
 
-[ext_resource type="Texture2D" uid="uid://5mrr6yndeg42" path="res://art/enemyFlyingAlt_1.png" id="1_5bhu7"]
-[ext_resource type="Script" uid="uid://bi4wpocd2187j" path="res://Mob.gd" id="1_ejbti"]
-[ext_resource type="Texture2D" uid="uid://dw5tjjrsfdfq8" path="res://art/enemySwimming_1.png" id="1_gguu4"]
-[ext_resource type="Texture2D" uid="uid://dymtia2472ul4" path="res://art/enemyFlyingAlt_2.png" id="2_ejbti"]
-[ext_resource type="Texture2D" uid="uid://mfbkxssxmbl5" path="res://art/enemySwimming_2.png" id="2_wpg5f"]
-[ext_resource type="Texture2D" uid="uid://cxsyfjkvvcffh" path="res://art/enemyWalking_1.png" id="3_5bhu7"]
-[ext_resource type="Texture2D" uid="uid://x2smhw4l1oue" path="res://art/enemyWalking_2.png" id="4_ejbti"]
+[ext_resource type="Script" uid="uid://csvi5oceyji3j" path="res://mob.gd" id="1_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://bwgdeueq73bea" path="res://art/enemyFlyingAlt_1.png" id="1_b3mxk"]
+[ext_resource type="Texture2D" uid="uid://b8gmtjixheg0p" path="res://art/enemyFlyingAlt_2.png" id="2_1qmh0"]
+[ext_resource type="Texture2D" uid="uid://bnvpe2jywsflq" path="res://art/enemySwimming_1.png" id="3_gfurk"]
+[ext_resource type="Texture2D" uid="uid://gl1y3j78kbyu" path="res://art/enemySwimming_2.png" id="4_ieysi"]
+[ext_resource type="Texture2D" uid="uid://djqrxobx7vfy6" path="res://art/enemyWalking_1.png" id="5_cixyi"]
+[ext_resource type="Texture2D" uid="uid://by8ykxeut06w" path="res://art/enemyWalking_2.png" id="6_7ulmv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ch7wj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcqmr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_5bhu7")
+"texture": ExtResource("1_b3mxk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ejbti")
+"texture": ExtResource("2_1qmh0")
 }],
 "loop": true,
 "name": &"fly",
@@ -23,10 +23,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_gguu4")
+"texture": ExtResource("3_gfurk")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_wpg5f")
+"texture": ExtResource("4_ieysi")
 }],
 "loop": true,
 "name": &"swim",
@@ -34,37 +34,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_5bhu7")
+"texture": ExtResource("5_cixyi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ejbti")
+"texture": ExtResource("6_7ulmv")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5bhu7"]
-radius = 84.0
-height = 192.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b3mxk"]
+radius = 37.0
+height = 104.0
 
-[node name="Mob" type="RigidBody2D" groups=["mob"]]
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_ejbti")
+script = ExtResource("1_1qmh0")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-light_mask = 0
 scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_ch7wj")
-animation = &"fly"
+sprite_frames = SubResource("SpriteFrames_pcqmr")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-scale = Vector2(0.75, 0.75)
-shape = SubResource("CapsuleShape2D_5bhu7")
+shape = SubResource("CapsuleShape2D_b3mxk")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(1.90735e-06, 1.5)
-scale = Vector2(4.2, 5.95)
