@@ -4,9 +4,9 @@
 - OS: MS Windows, macOS o Linux
 
 ## Instalacion
- 1. **Clonar el repositorio
+ 1. Clonar el repositorio
  
- 2. **Abrir proyecto desde Godot
+ 2. Abrir proyecto desde Godot
 
  - Inicia Godot Engine.
  - Click en "Importar".
